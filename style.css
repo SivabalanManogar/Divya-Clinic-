@@ -2056,6 +2056,16 @@ ul { list-style: none; }
         --section-padding: 70px 0;
     }
 
+    /* Solid visible navbar on mobile right from page load */
+    .navbar {
+        background: rgba(10, 45, 35, 0.95) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
     /* Mobile Nav Backdrop */
     .nav-backdrop {
         position: fixed;
@@ -2077,40 +2087,42 @@ ul { list-style: none; }
         visibility: visible;
     }
 
-    /* Nav Mobile Toggle Button */
+    /* Nav Mobile Toggle Button - High Visibility Always */
     .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        cursor: pointer;
-        padding: 0;
-        z-index: 1002;
-        transition: var(--transition);
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 12px !important;
+        background: #ffffff !important;
+        border: 2px solid var(--accent-gold) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        z-index: 1020 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: var(--transition) !important;
     }
 
     .navbar.scrolled .nav-toggle {
-        background: var(--primary-100);
-        border-color: var(--primary-200);
+        background: #ffffff !important;
+        border-color: var(--accent-gold) !important;
     }
 
     .hamburger {
-        width: 22px;
-        height: 2.5px;
-        background: #ffffff;
-        border-radius: 4px;
-        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background 0.3s ease;
+        width: 22px !important;
+        height: 3px !important;
+        background: #0d7c66 !important;
+        border-radius: 4px !important;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, background 0.3s ease !important;
     }
 
     .navbar.scrolled .hamburger {
-        background: var(--primary-dark);
+        background: #0d7c66 !important;
     }
 
     .nav-toggle.active {
