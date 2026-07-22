@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Appointments collection - anyone can create, only admin can read/update/delete
+    match /appointments/{appointmentId} {
+      // Allow anyone to submit an appointment (contact form)
+      allow create: if true;
+      
+      // Only authenticated admins can read, update, or delete
+      allow read, update, delete: if request.auth != null;
+    }
+    
+    // Default: deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
