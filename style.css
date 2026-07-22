@@ -72,6 +72,9 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
 }
 
 body {
@@ -79,7 +82,10 @@ body {
     color: var(--text);
     background: var(--bg);
     line-height: 1.7;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -2064,6 +2070,11 @@ ul { list-style: none; }
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
         padding: 10px 0 !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
     }
 
     /* Mobile Nav Backdrop */
@@ -2156,7 +2167,7 @@ ul { list-style: none; }
     .nav-menu {
         position: fixed !important;
         top: 0 !important;
-        right: -340px !important;
+        right: 0 !important;
         width: 310px !important;
         max-width: 85vw !important;
         height: 100vh !important;
@@ -2165,14 +2176,17 @@ ul { list-style: none; }
         flex-direction: column !important;
         padding: 24px 20px 30px !important;
         gap: 6px !important;
-        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        transform: translateX(105%) !important;
+        visibility: hidden !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease !important;
         box-shadow: -15px 0 50px rgba(0, 0, 0, 0.3) !important;
         z-index: 1001 !important;
         overflow-y: auto !important;
     }
 
     .nav-menu.active {
-        right: 0 !important;
+        transform: translateX(0) !important;
+        visibility: visible !important;
     }
 
     /* Mobile Drawer Branding Header */
