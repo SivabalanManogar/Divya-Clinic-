@@ -2062,6 +2062,34 @@ ul { list-style: none; }
         --section-padding: 70px 0;
     }
 
+    /* Floating Action Buttons Mobile Alignment Optimization */
+    .floating-buttons {
+        right: 14px !important;
+        bottom: 72px !important;
+        gap: 10px !important;
+        z-index: 999 !important;
+    }
+
+    .float-btn {
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 1.2rem !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .float-tooltip {
+        display: none !important; /* Hide hover tooltips on touch screens */
+    }
+
+    .back-to-top {
+        right: 14px !important;
+        bottom: 18px !important;
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 0.95rem !important;
+        z-index: 998 !important;
+    }
+
     /* Solid visible navbar on mobile right from page load */
     .navbar {
         background: rgba(10, 45, 35, 0.95) !important;
